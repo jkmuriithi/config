@@ -20,7 +20,8 @@ left = [
   "spacer",
   "mode",
   "spinner",
-  "file-name"
+  "file-name",
+  "file-modification-indicator"
 ]
 right = [
   "diagnostics",
@@ -57,9 +58,13 @@ c = ":config-open"
 u = ":reset-diff-change"
 H = ":toggle file-picker.hidden"
 A = ":toggle auto-completion"
+W = ":write"
 # Erdtree config (https://github.com/solidiquis/erdtree)
 t = ":sh erd -I"
 T = ":sh erd -.iIL 2"
+# Linux tree config (backup)
+# t = ":sh tree -RL 2"
+# T = ":sh tree -aRL 2"
 
 [keys.insert]
 C-c = "normal_mode"
