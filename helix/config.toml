@@ -1,4 +1,4 @@
-theme = "ayu_mirage"
+theme = "dark_plus"
 
 # Editor settings (https://docs.helix-editor.com/configuration.html)
 [editor]
@@ -11,6 +11,7 @@ completion-trigger-len = 1
 completion-replace = true
 true-color = true
 rulers = [81]
+bufferline = "multiple"
 color-modes = true
 
 [editor.statusline]
@@ -60,8 +61,8 @@ H = ":toggle file-picker.hidden"
 A = ":toggle auto-completion"
 W = ":write"
 # Erdtree config (https://github.com/solidiquis/erdtree)
-t = ":sh erd -I"
-T = ":sh erd -.iIL 2"
+t = ":sh erd -IH"
+T = ":sh erd -.iIHL 2"
 # Linux tree config (backup)
 # t = ":sh tree -RL 2"
 # T = ":sh tree -aRL 2"
