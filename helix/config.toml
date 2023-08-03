@@ -11,7 +11,6 @@ completion-trigger-len = 1
 completion-replace = true
 true-color = true
 rulers = [81]
-bufferline = "multiple"
 color-modes = true
 
 [editor.statusline]
@@ -35,7 +34,7 @@ right = [
 
 [editor.cursor-shape]
 insert = "bar"
-select = "bar"
+select = "underline"
 
 [editor.file-picker]
 hidden = false
@@ -58,7 +57,7 @@ C-S = ":write"
 c = ":config-open"
 u = ":reset-diff-change"
 H = ":toggle file-picker.hidden"
-A = ":toggle auto-completion"
+A = ":toggle lsp.auto-signature-help"
 W = ":write"
 # Erdtree config (https://github.com/solidiquis/erdtree)
 t = ":sh erd -IH"
