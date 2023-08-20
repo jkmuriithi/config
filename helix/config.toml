@@ -1,4 +1,4 @@
-theme = "dark_plus"
+theme = "catppuccin_macchiato"
 
 # Editor settings (https://docs.helix-editor.com/configuration.html)
 [editor]
@@ -10,6 +10,7 @@ idle-timeout = 1
 completion-trigger-len = 1
 completion-replace = true
 true-color = true
+bufferline = "multiple"
 rulers = [81]
 color-modes = true
 
@@ -56,7 +57,11 @@ C-S = ":write"
 [keys.normal.space]
 c = ":config-open"
 u = ":reset-diff-change"
-H = ":toggle file-picker.hidden"
+H = [
+":toggle file-picker.hidden",
+":toggle file-picker.ignore",
+":toggle file-picker.git-ignore"
+]
 A = ":toggle lsp.auto-signature-help"
 W = ":write"
 # Erdtree config (https://github.com/solidiquis/erdtree)
