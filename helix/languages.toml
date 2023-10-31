@@ -1,6 +1,5 @@
 [[language]]
 name = "rust"
-config = { checkOnSave = { command = "clippy" } }
 
 [[language]]
 name = "html"
@@ -41,7 +40,13 @@ file-types = ["py","pyi","py3","pyw","ptl",".pythonstartup",".pythonrc","SConstr
 shebangs = ["python"]
 roots = ["setup.py", "setup.cfg", "pyproject.toml"]
 comment-token = "#"
-language-server = { command = "pyright-langserver", args = ["--stdio"] }
+language-servers = ["pyright"]
 indent = { tab-width = 4, unit = "    " }
-# will get "Async jobs timed out" errors if this empty config is not added
-config = {}
+
+[language-server.rust-analyzer]
+config = { checkOnSave = { command = "clippy" } }
+
+[language-server.pyright]
+command = "pyright-langserver"
+args = ["--stdio"]
+config = { typeCheckingMode = "strict" }
