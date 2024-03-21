@@ -1,10 +1,11 @@
-theme = "tokyonight"
+theme = "base16_transparent"
 
 # Editor settings (https://docs.helix-editor.com/configuration.html)
 [editor]
 line-number = "relative"
 cursorline = true
 auto-save = true
+# Windows only
 shell = ["C:\\Program Files\\Git\\bin\\bash.exe", "-c"]
 idle-timeout = 1
 completion-trigger-len = 1
