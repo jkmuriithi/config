@@ -33,7 +33,16 @@ auto-format = true
 name = "python"
 scope = "source.python"
 injection-regex = "python"
-file-types = ["py","pyi","py3","pyw","ptl",".pythonstartup",".pythonrc","SConstruct"]
+file-types = [
+  "py",
+  "pyi",
+  "py3",
+  "pyw",
+  "ptl",
+  ".pythonstartup",
+  ".pythonrc",
+  "SConstruct",
+]
 shebangs = ["python"]
 roots = ["setup.py", "setup.cfg", "pyproject.toml"]
 comment-token = "#"
@@ -41,41 +50,48 @@ language-servers = ["pyright"]
 indent = { tab-width = 4, unit = "    " }
 
 [[language]]
-  name = "glsl"
-  scope = "source.glsl"
-  file-types = ["glsl", "vert", "tesc", "tese", "geom", "frag", "comp" ]
-  roots = []
-  comment-token = "//"
-  indent = { tab-width = 4, unit = "    " }
-  injection-regex = "glsl"
-  language-servers = ["glsl_analyzer"]
-  
+name = "glsl"
+scope = "source.glsl"
+file-types = ["glsl", "vert", "tesc", "tese", "geom", "frag", "comp"]
+roots = []
+comment-token = "//"
+indent = { tab-width = 4, unit = "    " }
+injection-regex = "glsl"
+language-servers = ["glsl_analyzer"]
+
 [[language]]
-  name = "wgsl"
-  scope = "source.wgsl"
-  file-types = [ "wgsl" ]
-  roots = []
-  comment-token = "//"
-  indent = { tab-width = 4, unit = "    " }
-  injection-regex = "wgsl"
-  language-servers = ["wgsl_analyzer"]
-  
-[language-server.rust-analyzer]
-config = { checkOnSave = { command = "clippy" } }
+name = "wgsl"
+scope = "source.wgsl"
+file-types = ["wgsl"]
+roots = []
+comment-token = "//"
+indent = { tab-width = 4, unit = "    " }
+injection-regex = "wgsl"
+language-servers = ["wgsl_analyzer"]
 
-[language-server.pyright]
-command = "pyright-langserver"
-args = ["--stdio"]
-config = { typeCheckingMode = "strict" }
+[language-server.clangd]
+args = ["--enable-config"]
 
+# https://docs.deno.com/runtime/getting_started/setup_your_environment/#helix
+[language-server.deno-lsp]
+command = "deno"
+args = ["lsp"]
+
+[language-server.deno-lsp.config.deno]
+enable = true
 [language-server.glsl_analyzer]
 command = "glsl_analyzer"
 
 [language-server.glsl-lsp]
 command = "glsl-lsp"
 
+[language-server.pyright]
+command = "pyright-langserver"
+args = ["--stdio"]
+config = { typeCheckingMode = "strict" }
+
+[language-server.rust-analyzer]
+config = { checkOnSave = { command = "clippy" } }
+
 [language-server.wgsl_analyzer]
 command = "wgsl_analyzer"
-
-[language-server.clangd]
-args = ["--enable-config"]

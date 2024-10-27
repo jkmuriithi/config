@@ -1,4 +1,4 @@
-theme = "base16_transparent"
+theme = "base16_default_dark"
 
 # Editor settings (https://docs.helix-editor.com/configuration.html)
 [editor]
