@@ -4,6 +4,13 @@ formatter = { command = 'prettier.cmd', args = ["--parser", "html"] }
 auto-format = true
 
 [[language]]
+name = "xml"
+file-types = [ "xml", "svg", "xsd", "xslt", "xsl" ]
+auto-format = true
+formatter = { command = "xmllint", args = ["--format", "-"] }
+language-servers = [ "lemminx" ]
+
+[[language]]
 name = "json"
 formatter = { command = 'prettier.cmd', args = ["--parser", "json"] }
 auto-format = true
@@ -85,6 +92,9 @@ command = "glsl_analyzer"
 [language-server.glsl-lsp]
 command = "glsl-lsp"
 
+[language-server.lemminx]
+command = "lemminx"
+
 [language-server.pyright]
 command = "pyright-langserver"
 args = ["--stdio"]
@@ -95,3 +105,10 @@ config = { checkOnSave = { command = "clippy" } }
 
 [language-server.wgsl_analyzer]
 command = "wgsl_analyzer"
+
+[language-server.yaml-language-server.config.yaml]
+format = { enable = true }
+validation = true
+
+[language-server.yaml-language-server.config.yaml.schemas]
+"https://json.schemastore.org/github-workflow.json" = ".github/workflows/*.{yml,yaml}"
